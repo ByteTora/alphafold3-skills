@@ -60,7 +60,7 @@ Run and interpret AlphaFold 3 inference — from Docker commands to understandin
 - **Running** — Docker/Singularity commands, staged pipeline (data-only / inference-only), batch processing
 - **Input format** — Complete JSON reference for sequences, ligands, bonds, modifications, MSA, templates
 - **Confidence metrics** — pLDDT (per-atom), PAE (per-pair), pTM (overall fold), ipTM (interface), ranking scores
-- **Performance tuning** — Compilation buckets, sharded genetic databases (10-30x speedup), JAX persistent cache, unified memory
+- **Performance tuning** — Compilation buckets, sharded sequence alignment databases (10-30x speedup), JAX persistent cache, unified memory
 - **Troubleshooting** — V100 issues, SMILES two-letter atoms, MSA discrepancies, RDKit conformer failures
 - **Internals** — Evoformer trunk, Diffusion Head, Confidence Head, data pipeline architecture, full codebase map
 
@@ -164,12 +164,14 @@ The agent will handle SSH connection, file upload, and background job management
 
 The skills themselves are documentation with no runtime dependencies. However, the tools they guide you to use require:
 
+> **Before using**: AlphaFold 3 must be fully installed on the target machine (cloned, Docker image built, sequence alignment databases downloaded, model parameters obtained). This skill collection does not install AlphaFold 3 — it guides you through using an existing installation.
+
 | Dependency | Required by | Details |
 |------------|-------------|---------|
 | `pip install af3cli[biopython,rdkit]` | af3cli | Python 3.10+ |
 | AlphaFold 3 Docker image | alphafold3 | `docker build -t alphafold3 -f docker/Dockerfile .` |
 | NVIDIA GPU (A100/H100) | alphafold3 | Compute Capability >= 8.0 |
-| Genetic databases | alphafold3 | ~252 GB download, ~630 GB decompressed |
+| Sequence alignment databases | alphafold3 | ~252 GB download, ~630 GB decompressed |
 | Model parameters | alphafold3 | Via [Google Form](https://forms.gle/svvpY4u2jsHEwWYS6) |
 
 ---

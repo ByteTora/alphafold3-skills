@@ -60,7 +60,7 @@
 - **运行** — Docker/Singularity 命令、分阶段管线（仅数据 / 仅推理）、批量处理
 - **输入格式** — 完整的 JSON 参考：序列、配体、键合、修饰、MSA、模板
 - **置信度指标** — pLDDT（每原子）、PAE（每对）、pTM（整体折叠）、ipTM（界面）、排名评分
-- **性能调优** — 编译桶、分片遗传数据库（10-30 倍加速）、JAX 持久缓存、统一内存
+- **性能调优** — 编译桶、分片序列比对数据库（10-30 倍加速）、JAX 持久缓存、统一内存
 - **故障排查** — V100 问题、SMILES 双字母原子、MSA 差异、RDKit 构象生成失败
 - **内部机制** — Evoformer 主干、扩散头、置信度头、数据管线架构、完整源码导航
 
@@ -164,12 +164,14 @@ Agent 会自动处理 SSH 连接、文件上传和后台任务管理。
 
 Skills 本身是文档，无运行时依赖。但它们引导你使用的工具需要：
 
+> **使用前请注意**：AlphaFold 3 必须在目标机器上完整安装（克隆仓库、构建 Docker 镜像、下载序列比对数据库、获取模型参数）。本 skills 集合不会安装 AlphaFold 3，它指导你如何使用已有的安装。
+
 | 依赖项 | 需要的 skill | 详情 |
 |------------|-------------|---------|
 | `pip install af3cli[biopython,rdkit]` | af3cli | Python 3.10+ |
 | AlphaFold 3 Docker 镜像 | alphafold3 | `docker build -t alphafold3 -f docker/Dockerfile .` |
 | NVIDIA GPU (A100/H100) | alphafold3 | Compute Capability >= 8.0 |
-| 遗传数据库 | alphafold3 | 约 252 GB 下载，约 630 GB 解压 |
+| 序列比对数据库 | alphafold3 | 约 252 GB 下载，约 630 GB 解压 |
 | 模型参数 | alphafold3 | 通过 [Google Form](https://forms.gle/svvpY4u2jsHEwWYS6) 获取 |
 
 ---

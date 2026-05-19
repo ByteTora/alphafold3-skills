@@ -147,7 +147,7 @@ Usage:
 
 The `@N` suffix indicates **N shards**. The tool reads `prefix-00000-of-NNNNN` format files.
 
-Achieves **10-30× speedup** on genetic search.
+Achieves **10-30× speedup** on sequence search.
 
 ## Featurization
 

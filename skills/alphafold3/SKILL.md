@@ -9,11 +9,13 @@ Run, analyze, and debug Google DeepMind's [AlphaFold 3](https://github.com/googl
 
 ## Prerequisites
 
+> **Important**: AlphaFold 3 must be **fully installed** on the target machine before using this skill. This includes cloning the repository, building the Docker image, downloading sequence alignment databases, and obtaining model parameters. The skill guides you through inference — it does not install AlphaFold 3.
+
 These are assumed to be in place (the user configured their environment):
 
 - **Repo cloned**: `git clone https://github.com/google-deepmind/alphafold3.git`
 - **Docker image built**: `docker build -t alphafold3 -f docker/Dockerfile .`
-- **Genetic databases downloaded** (~252 GB download, ~630 GB decompressed): `./fetch_databases.sh <DB_DIR>`
+- **Sequence alignment databases downloaded** (~252 GB download, ~630 GB decompressed): `./fetch_databases.sh <DB_DIR>`
 - **Model parameters obtained**: via [Google form](https://forms.gle/svvpY4u2jsHEwWYS6), saved to `<MODEL_PARAMETERS_DIR>`
 - **Linux host** with NVIDIA GPU (A100 80 GB or H100 80 GB recommended, Compute Capability >= 8.0)
 
@@ -144,7 +146,7 @@ See `references/model-architecture.md` for a deep dive into:
 
 See `references/data-pipeline.md` for a deep dive into:
 
-- **MSA Search**: Jackhmmer (protein) and Nhmmer (RNA) against genetic databases (BFD, MGnify, UniRef90, UniProt, RNAcentral, NT RNA, Rfam)
+- **MSA Search**: Jackhmmer (protein) and Nhmmer (RNA) against sequence alignment databases (BFD, MGnify, UniRef90, UniProt, RNAcentral, NT RNA, Rfam)
 - **Template Search**: Hmmsearch against PDB mmCIF structures
 - **Sharded Databases**: Split FASTA into shards for 10-30× parallel speedup
 - **Featurization Pipeline**: RDKit conformers → atom layout → MSA features → template features → batch assembly
@@ -156,7 +158,7 @@ See `references/data-pipeline.md` for a deep dive into:
 See `references/running.md` → Performance section for:
 
 - Compilation buckets (`--buckets 256,512,...,5376`)
-- Sharded genetic databases (10–30× speedup on multi-core machines)
+- Sharded sequence alignment databases (10–30× speedup on multi-core machines)
 - Unified memory for >5120 tokens
 - JAX persistent compilation cache (`--jax_compilation_cache_dir`)
 

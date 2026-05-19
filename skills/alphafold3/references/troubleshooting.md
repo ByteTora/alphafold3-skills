@@ -26,7 +26,7 @@ Disabling Triton GEMM kernels is not needed for these GPUs.
 
 **Cause**: AlphaFold Server uses sharded databases without `--domZ`, making its `--domE` filter ~100× more permissive, producing a deeper MSA.
 
-**Fix**: Increase Jackhmmer/Nhmmer `--domE` by 100×, or use sharded databases (see `references/running.md` → Sharded genetic databases).
+**Fix**: Increase Jackhmmer/Nhmmer `--domE` by 100×, or use sharded databases (see `references/running.md` → Sharded sequence alignment databases).
 
 Recommendation: If a prediction has low confidence scores, experiment with deeper MSA to potentially improve accuracy.
 

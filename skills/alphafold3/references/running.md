@@ -191,7 +191,7 @@ python run_alphafold.py \
 
 Always compile for the largest bucket you expect, and smaller inputs will be padded. If inputs vary widely, add all intermediate bucket sizes to avoid recompilation.
 
-### Sharded genetic databases
+### Sharded sequence alignment databases
 
 For machines with many CPU cores and fast SSD/RAM-backed storage.
 
@@ -215,7 +215,7 @@ python run_alphafold.py \
   --nhmmer_max_parallel_shards=16
 ```
 
-Can achieve 10–30× speedup on the genetic search stage.
+Can achieve 10–30× speedup on the sequence search stage.
 
 ### GPU memory
 

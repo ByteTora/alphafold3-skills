@@ -175,7 +175,7 @@ Located in `src/alphafold3/test_data/`:
 | `model_config.json` | Expected model config for golden testing |
 | `featurised_example.pkl` / `.json` | Pre-computed featurized input for inference tests |
 | `alphafold_run_outputs/` | Expected inference outputs for regression testing |
-| `miniature_databases/` | Subsamples (~1000 seqs each) of all genetic databases + 2 PDB mmCIFs |
+| `miniature_databases/` | Subsamples (~1000 seqs each) of all sequence alignment databases + 2 PDB mmCIFs |
 
 ### CI
 

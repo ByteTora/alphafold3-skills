@@ -110,7 +110,7 @@ After installing, the skills trigger automatically when you mention relevant tas
 "Create an AlphaFold3 input for myoglobin with a heme ligand"
 ```
 
-→ Claude uses **af3cli** to generate the JSON with protein sequence, SMILES ligand, and bonds.
+→ The agent uses **af3cli** to generate the JSON with protein sequence, SMILES ligand, and bonds.
 
 ### Run prediction
 
@@ -118,7 +118,7 @@ After installing, the skills trigger automatically when you mention relevant tas
 "Run AlphaFold3 on this input file on my GPU server at 192.168.1.100"
 ```
 
-→ Claude uses **alphafold3** to SSH into the server and run the Docker inference command.
+→ The agent uses **alphafold3** to SSH into the server and run the Docker inference command.
 
 ### Interpret results
 
@@ -126,7 +126,7 @@ After installing, the skills trigger automatically when you mention relevant tas
 "What does an ipTM of 0.85 mean for my predicted complex?"
 ```
 
-→ Claude uses **alphafold3** to explain: ipTM > 0.8 indicates high-confidence interface prediction.
+→ The agent uses **alphafold3** to explain: ipTM > 0.8 indicates high-confidence interface prediction.
 
 ### Debug failures
 
@@ -134,7 +134,7 @@ After installing, the skills trigger automatically when you mention relevant tas
 "AlphaFold3 produced a clash score of -99, how do I fix this?"
 ```
 
-→ Claude uses **alphafold3** to identify the V100/XLA incompatibility and suggest `XLA_FLAGS` workaround.
+→ The agent uses **alphafold3** to identify the V100/XLA incompatibility and suggest `XLA_FLAGS` workaround.
 
 ---
 

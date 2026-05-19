@@ -110,7 +110,7 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 "帮我创建一个包含肌红蛋白和血红素配体的 AlphaFold3 输入文件"
 ```
 
-→ Claude 使用 **af3cli** 生成包含蛋白质序列、SMILES 配体和键合信息的 JSON。
+→ Agent 使用 **af3cli** 生成包含蛋白质序列、SMILES 配体和键合信息的 JSON。
 
 ### 运行预测
 
@@ -118,7 +118,7 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 "在 192.168.1.100 的 GPU 服务器上运行 AlphaFold3 预测这个输入文件"
 ```
 
-→ Claude 使用 **alphafold3** SSH 连接到服务器并执行 Docker 推理命令。
+→ Agent 使用 **alphafold3** SSH 连接到服务器并执行 Docker 推理命令。
 
 ### 解读结果
 
@@ -126,7 +126,7 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 "预测复合物的 ipTM 是 0.85，这说明什么？"
 ```
 
-→ Claude 使用 **alphafold3** 解释：ipTM > 0.8 表示高置信度的界面预测。
+→ Agent 使用 **alphafold3** 解释：ipTM > 0.8 表示高置信度的界面预测。
 
 ### 调试失败
 
@@ -134,7 +134,7 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 "AlphaFold3 输出了 -99 的 clash 分数，怎么修复？"
 ```
 
-→ Claude 使用 **alphafold3** 识别 V100/XLA 不兼容问题，并建议 `XLA_FLAGS` 解决方案。
+→ Agent 使用 **alphafold3** 识别 V100/XLA 不兼容问题，并建议 `XLA_FLAGS` 解决方案。
 
 ---
 

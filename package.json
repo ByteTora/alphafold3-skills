@@ -1,0 +1,33 @@
+{
+  "name": "alphafold3-tools",
+  "version": "1.0.0",
+  "description": "AlphaFold3 agent skills for opencode, Claude Code, and Codex — input JSON building + structure prediction pipeline",
+  "license": "MIT",
+  "bin": {
+    "alphafold3-tools": "./install.js"
+  },
+  "files": [
+    "install.js",
+    "skills/"
+  ],
+  "keywords": [
+    "alphafold3",
+    "alphafold",
+    "protein-structure",
+    "biomolecular",
+    "af3cli",
+    "opencode",
+    "claude-code",
+    "codex",
+    "skills",
+    "agent-skills"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByteTora/alphafold3-skills.git"
+  },
+  "author": "",
+  "engines": {
+    "node": ">=16"
+  }
+}

@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:3b82f6,100:8b5cf6&height=180&section=header&text=alphafold3-skills&fontSize=54&fontAlignY=35&desc=AlphaFold%203%20Agent%20Skills&descAlignY=55&fontColor=ffffff&descColor=cbd5e1&descZh=AlphaFold%203%20Agent%20Skills">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:3b82f6,100:8b5cf6&height=180&section=header&text=alphafold3-skills&fontSize=54&fontAlignY=35&desc=AlphaFold%203%20Agent%20Skills&descAlignY=55&fontColor=ffffff&descColor=475569" alt="alphafold3-skills">
+    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:3b82f6,100:8b5cf6&height=200&section=header&text=alphafold3-skills&fontSize=50&fontColor=ffffff&desc=AlphaFold%203%20Agent%20Skills&descSize=16&descColor=cbd5e1">
+    <img src="https://capsule-render.vercel.app/api?type=venom&color=0:3b82f6,100:8b5cf6&height=200&section=header&text=alphafold3-skills&fontSize=50&fontColor=ffffff&desc=AlphaFold%203%20Agent%20Skills&descSize=16&descColor=475569" alt="alphafold3-skills">
   </picture>
 </p>
 

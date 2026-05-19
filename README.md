@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-Compatible-3b82f6?style=flat-square" alt="Agent Skills"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/skills-2-success?style=flat-square" alt="Skills"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/skills-3-success?style=flat-square" alt="Skills"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License"></a>
   <a href="https://github.com/ByteTora/alphafold3-skills/stargazers"><img src="https://img.shields.io/github/stars/ByteTora/alphafold3-skills?style=flat-square" alt="Stars"></a>
 </p>
@@ -30,13 +30,13 @@ Compatible with all tools supporting the **[Agent Skills](https://agentskills.io
 
 ## Skills
 
-|  | 🧬 af3cli | 🔬 alphafold3 |
-|---|-----------|---------------|
-| **What it does** | Generate input JSON files | Run inference + interpret results |
-| **Input** | FASTA · SMILES · SDF · CCD | Input JSON |
-| **Output** | `.json` file | `.cif` structure + confidence scores |
-| **Dependencies** | `pip install af3cli` + RDKit/Biopython | Docker + NVIDIA GPU |
-| **Key features** | Chainable CLI · Python API · MSA · Templates · Bonds · Modifications | Confidence metrics · Performance tuning · Troubleshooting · Model internals · Codebase navigation |
+|  | 🧬 af3cli | 🔬 alphafold3 | 🖥️ remote-server |
+|---|-----------|---------------|-----------------|
+| **What it does** | Generate input JSON files | Run inference + interpret results | Manage remote servers via SSH |
+| **Input** | FASTA · SMILES · SDF · CCD | Input JSON | Server address + credentials |
+| **Output** | `.json` file | `.cif` structure + confidence scores | File transfers, background jobs, results |
+| **Dependencies** | `pip install af3cli` + RDKit/Biopython | Docker + NVIDIA GPU | SSH client (built-in on macOS/Linux) |
+| **Key features** | Chainable CLI · Python API · MSA · Templates · Bonds · Modifications | Confidence metrics · Performance tuning · Troubleshooting · Model internals · Codebase navigation | SSH config · scp/rsync · screen/tmux/nohup · Progress monitoring |
 
 ### 🧬 af3cli
 
@@ -63,6 +63,16 @@ Run and interpret AlphaFold 3 inference — from Docker commands to understandin
 - **Performance tuning** — Compilation buckets, sharded genetic databases (10-30x speedup), JAX persistent cache, unified memory
 - **Troubleshooting** — V100 issues, SMILES two-letter atoms, MSA discrepancies, RDKit conformer failures
 - **Internals** — Evoformer trunk, Diffusion Head, Confidence Head, data pipeline architecture, full codebase map
+
+### 🖥️ remote-server
+
+General-purpose remote Linux server management via SSH — the bridge between your local agent and remote GPU/compute servers.
+
+- **SSH connection** — Key authentication, `~/.ssh/config` aliases, jump hosts, connection testing
+- **File transfer** — `scp`, `rsync`, direct file writing via heredoc
+- **Background jobs** — `screen`, `tmux`, `nohup` for long-running tasks
+- **Progress monitoring** — Check process status, tail logs, detect output file completion
+- **Result retrieval** — Download output files, clean up remote temp files
 
 ---
 
@@ -118,7 +128,7 @@ After installing, the skills trigger automatically when you mention relevant tas
 "Run AlphaFold3 on this input file on my GPU server at 192.168.1.100"
 ```
 
-→ The agent uses **alphafold3** to SSH into the server and run the Docker inference command.
+→ The agent uses **remote-server** to SSH into the server, upload the file, start a background job with screen/tmux, and report the estimated completion time.
 
 ### Interpret results
 
@@ -140,13 +150,13 @@ After installing, the skills trigger automatically when you mention relevant tas
 
 ## Remote Servers
 
-Both skills support running AlphaFold 3 on remote servers. Include the server address in your prompt:
+Use the **remote-server** skill to run AlphaFold 3 on remote GPU servers. Include the server address in your prompt:
 
 ```
 "Fold this protein on my lab server (user@10.0.0.5)"
 ```
 
-The alphafold3 skill will automatically prefix Docker commands with `ssh user@host`.
+The agent will handle SSH connection, file upload, and background job management automatically.
 
 ---
 

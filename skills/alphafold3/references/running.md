@@ -53,7 +53,7 @@ Request via [Google Form](https://forms.gle/svvpY4u2jsHEwWYS6). Save to `<MODEL_
 
 ## Docker Run
 
-**Remote server**: If AlphaFold3 is installed on a remote server, prefix docker commands with `ssh user@host`.
+> For remote servers, use the **remote-server** skill for SSH connection, file transfer, and background job management (screen/tmux/nohup).
 
 ### Basic run
 

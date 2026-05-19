@@ -21,14 +21,13 @@ If any are missing, see `references/running.md` → Installation section for set
 
 ## Quick Start
 
-If AlphaFold3 is installed on a **remote server**, prefix commands with SSH:
+If AlphaFold3 is installed on a **remote server**, use the **remote-server** skill for SSH connection, file transfer, and background job management. Then run:
 
 ```bash
 ssh user@host "docker run -it --gpus all ..."
-# or ssh into the server first, then run docker commands interactively
 ```
 
-Otherwise if running locally:
+If running locally:
 
 ```bash
 docker run -it \

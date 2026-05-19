@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-Compatible-3b82f6?style=flat-square" alt="Agent Skills"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/skills-2-success?style=flat-square" alt="Skills"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/skills-3-success?style=flat-square" alt="Skills"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License"></a>
   <a href="https://github.com/ByteTora/alphafold3-skills/stargazers"><img src="https://img.shields.io/github/stars/ByteTora/alphafold3-skills?style=flat-square" alt="Stars"></a>
 </p>
@@ -30,13 +30,13 @@
 
 ## Skills 概览
 
-|  | 🧬 af3cli | 🔬 alphafold3 |
-|---|-----------|---------------|
-| **功能** | 生成输入 JSON 文件 | 运行推理 + 解读结果 |
-| **输入** | FASTA · SMILES · SDF · CCD | Input JSON |
-| **输出** | `.json` 文件 | `.cif` 结构 + 置信度评分 |
-| **依赖** | `pip install af3cli` + RDKit/Biopython | Docker + NVIDIA GPU |
-| **核心能力** | 链式 CLI · Python API · MSA · 模板 · 键合 · 修饰 | 置信度指标 · 性能调优 · 故障排查 · 模型内部 · 源码导航 |
+|  | 🧬 af3cli | 🔬 alphafold3 | 🖥️ remote-server |
+|---|-----------|---------------|-----------------|
+| **功能** | 生成输入 JSON 文件 | 运行推理 + 解读结果 | 通过 SSH 管理远程服务器 |
+| **输入** | FASTA · SMILES · SDF · CCD | Input JSON | 服务器地址 + 认证信息 |
+| **输出** | `.json` 文件 | `.cif` 结构 + 置信度评分 | 文件传输、后台任务、结果获取 |
+| **依赖** | `pip install af3cli` + RDKit/Biopython | Docker + NVIDIA GPU | SSH 客户端（macOS/Linux 内置） |
+| **核心能力** | 链式 CLI · Python API · MSA · 模板 · 键合 · 修饰 | 置信度指标 · 性能调优 · 故障排查 · 模型内部 · 源码导航 | SSH 配置 · scp/rsync · screen/tmux/nohup · 进度监控 |
 
 ### 🧬 af3cli
 
@@ -63,6 +63,16 @@
 - **性能调优** — 编译桶、分片遗传数据库（10-30 倍加速）、JAX 持久缓存、统一内存
 - **故障排查** — V100 问题、SMILES 双字母原子、MSA 差异、RDKit 构象生成失败
 - **内部机制** — Evoformer 主干、扩散头、置信度头、数据管线架构、完整源码导航
+
+### 🖥️ remote-server
+
+通用远程 Linux 服务器管理——连接本地 Agent 与远程 GPU/计算服务器的桥梁。
+
+- **SSH 连接** — 密钥认证、`~/.ssh/config` 别名、跳板机、连接测试
+- **文件传输** — `scp`、`rsync`、通过 heredoc 直接写入文件
+- **后台任务** — `screen`、`tmux`、`nohup` 管理长时间运行的任务
+- **进度监控** — 检查进程状态、tail 日志、检测输出文件是否完成
+- **结果获取** — 下载输出文件、清理远程临时文件
 
 ---
 
@@ -118,7 +128,7 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 "在 192.168.1.100 的 GPU 服务器上运行 AlphaFold3 预测这个输入文件"
 ```
 
-→ Agent 使用 **alphafold3** SSH 连接到服务器并执行 Docker 推理命令。
+→ Agent 使用 **remote-server** SSH 连接到服务器，上传文件，通过 screen/tmux 启动后台任务，并告知预计完成时间。
 
 ### 解读结果
 
@@ -140,13 +150,13 @@ cp -r alphafold3-skills/skills/* ~/.cursor/skills/     # Cursor
 
 ## 远程服务器
 
-两个 skill 都支持在远程服务器上运行 AlphaFold 3。在提示词中包含服务器地址即可：
+使用 **remote-server** skill 在远程 GPU 服务器上运行 AlphaFold 3。在提示词中包含服务器地址即可：
 
 ```
-"帮我在实验室服务器上折叠这个蛋白质（user@10.0.0.5）"
+"帮我在实验室服务器上运行 AlphaFold 3 预测（user@10.0.0.5）"
 ```
 
-alphafold3 skill 会自动在 Docker 命令前加上 `ssh user@host`。
+Agent 会自动处理 SSH 连接、文件上传和后台任务管理。
 
 ---
 

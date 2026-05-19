@@ -81,11 +81,11 @@ alphafold3/
 ├── run_alphafold_data_test.py    # CPU data pipeline tests (281 lines)
 ├── pyproject.toml                # Build config, dependencies, metadata
 ├── CMakeLists.txt                # C++ build configuration (100 lines)
-├── Dockerfile                    # Docker image definition (88 lines)
 ├── fetch_databases.sh            # Database download script
 ├── uv.lock                       # Locked dependency versions
 ├── .github/workflows/ci.yaml     # GitHub Actions CI (CPU tests only)
 ├── docker/                       # Docker-related files
+│   └── Dockerfile                # Docker image definition (88 lines)
 ├── docs/                         # Official documentation
 ├── legal/                        # Translated legal documents
 └── src/alphafold3/               # Main Python package

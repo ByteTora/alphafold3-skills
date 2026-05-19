@@ -190,10 +190,6 @@ Contributions are welcome! If you'd like to improve a skill or add new AlphaFold
 
 - [SLx64/af3cli](https://github.com/SLx64/af3cli) — AlphaFold 3 input JSON generation tool
 - [google-deepmind/alphafold3](https://github.com/google-deepmind/alphafold3) — Official AlphaFold 3 inference pipeline
-- [vercel-labs/skills](https://github.com/vercel-labs/skills) — Agent Skills CLI package manager
 
 ---
 
-<p align="center">
-  <sub>Made with 🧬 for the protein folding community</sub>
-</p>

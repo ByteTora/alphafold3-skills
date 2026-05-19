@@ -12,9 +12,15 @@
   <a href="https://github.com/ByteTora/alphafold3-skills/stargazers"><img src="https://img.shields.io/github/stars/ByteTora/alphafold3-skills?style=flat-square" alt="Stars"></a>
 </p>
 
+<p align="center">
+  <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
+</p>
+
 ---
 
-Agent skills for working with **AlphaFold 3** — from building input JSON files to running and interpreting the structure prediction pipeline.
+Agent skills for working with **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)** — Google DeepMind's biomolecular structure prediction pipeline — from building input JSON files to running and interpreting results.
+
+Built on top of the [af3cli](https://github.com/SLx64/af3cli) library for input generation and the official [AlphaFold 3](https://github.com/google-deepmind/alphafold3) inference pipeline.
 
 Compatible with all tools supporting the [Agent Skills](https://agentskills.io) standard: opencode, Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Windsurf, and 50+ others.
 
@@ -34,6 +40,8 @@ Compatible with all tools supporting the [Agent Skills](https://agentskills.io) 
 
 CLI and Python library for generating AlphaFold 3 input JSON files.
 
+> Based on [SLx64/af3cli](https://github.com/SLx64/af3cli)
+
 - **Sequences** — Add protein / DNA / RNA from FASTA or inline, auto-detect reverse complement
 - **Ligands** — Add from SMILES, CCD codes, or SDF files (RDKit)
 - **Modifications** — Residue and nucleotide modifications at specified positions
@@ -44,6 +52,8 @@ CLI and Python library for generating AlphaFold 3 input JSON files.
 ### 🔬 alphafold3
 
 Run and interpret AlphaFold 3 inference — from Docker commands to understanding output metrics.
+
+> Based on [google-deepmind/alphafold3](https://github.com/google-deepmind/alphafold3)
 
 - **Running** — Docker/Singularity commands, staged pipeline (data-only / inference-only), batch processing
 - **Input format** — Complete JSON reference for sequences, ligands, bonds, modifications, MSA, templates
@@ -173,6 +183,14 @@ Contributions are welcome! If you'd like to improve a skill or add new AlphaFold
     </picture>
   </a>
 </p>
+
+---
+
+## References
+
+- [SLx64/af3cli](https://github.com/SLx64/af3cli) — AlphaFold 3 input JSON generation tool
+- [google-deepmind/alphafold3](https://github.com/google-deepmind/alphafold3) — Official AlphaFold 3 inference pipeline
+- [vercel-labs/skills](https://github.com/vercel-labs/skills) — Agent Skills CLI package manager
 
 ---
 

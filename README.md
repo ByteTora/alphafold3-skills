@@ -1,8 +1,8 @@
-# alphafold3-tools
+# alphafold3-skills
 
 Agent skills for working with AlphaFold 3 — from building input JSON files to running and interpreting the structure prediction pipeline.
 
-Two independent skills that work with [opencode](https://opencode.ai), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), and [Codex](https://github.com/openai/codex).
+Two independent skills compatible with all tools supporting the [Agent Skills](https://agentskills.io) standard: opencode, Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Windsurf, and 50+ others.
 
 ## Skills
 
@@ -29,55 +29,33 @@ Run and interpret AlphaFold 3 inference.
 
 ## Install
 
-### npx (recommended)
+### skills CLI (recommended)
 
 ```bash
-npx alphafold3-skills
+npx skills add ByteTora/alphafold3-skills    # npm
+bunx skills add ByteTora/alphafold3-skills   # bun
+pnpm dlx skills add ByteTora/alphafold3-skills # pnpm
 ```
 
-Auto-detects which agent tools are present and installs both skills.
+The `skills` CLI automatically detects which agent tools are installed on your system and installs to the correct directories. Supports 55+ agents.
 
-### npm global
+### gh CLI
 
 ```bash
-npm install -g alphafold3-skills
-alphafold3-skills
+gh skill install ByteTora/alphafold3-skills
 ```
 
-### Target a specific agent
-
-```bash
-npx alphafold3-skills --opencode      # opencode only
-npx alphafold3-skills --claude-code   # Claude Code only
-npx alphafold3-skills --codex         # Codex only
-npx alphafold3-skills --all           # all paths, force install
-```
+Requires GitHub CLI v2.90.0+.
 
 ### Manual
 
 ```bash
 git clone https://github.com/ByteTora/alphafold3-skills.git
-cp -r alphafold3-tools/skills/* ~/.opencode/skills/   # opencode
-# or
-cp -r alphafold3-tools/skills/* ~/.claude/skills/     # Claude Code
-# or
-cp -r alphafold3-tools/skills/* ~/.codex/skills/       # Codex
+# Copy to your agent's skills directory, e.g.:
+cp -r alphafold3-skills/skills/* ~/.opencode/skills/
+cp -r alphafold3-skills/skills/* ~/.claude/skills/
+cp -r alphafold3-skills/skills/* ~/.codex/skills/
 ```
-
-### Symbolic link (auto-updates on git pull)
-
-```bash
-ln -s "$(pwd)/alphafold3-tools/skills/af3cli" ~/.opencode/skills/af3cli
-ln -s "$(pwd)/alphafold3-tools/skills/alphafold3" ~/.opencode/skills/alphafold3
-```
-
-## Agent Tool Compatibility
-
-| Tool | Skills directory | Status |
-|------|-----------------|--------|
-| opencode | `~/.opencode/skills/` | Supported |
-| Claude Code | `~/.claude/skills/` | Supported |
-| Codex | `~/.codex/skills/` | Supported |
 
 ## Usage Examples
 

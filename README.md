@@ -32,7 +32,7 @@ Run and interpret AlphaFold 3 inference.
 ### npx (recommended)
 
 ```bash
-npx alphafold3-tools
+npx alphafold3-skills
 ```
 
 Auto-detects which agent tools are present and installs both skills.
@@ -40,17 +40,17 @@ Auto-detects which agent tools are present and installs both skills.
 ### npm global
 
 ```bash
-npm install -g alphafold3-tools
-alphafold3-tools
+npm install -g alphafold3-skills
+alphafold3-skills
 ```
 
 ### Target a specific agent
 
 ```bash
-npx alphafold3-tools --opencode      # opencode only
-npx alphafold3-tools --claude-code   # Claude Code only
-npx alphafold3-tools --codex         # Codex only
-npx alphafold3-tools --all           # all paths, force install
+npx alphafold3-skills --opencode      # opencode only
+npx alphafold3-skills --claude-code   # Claude Code only
+npx alphafold3-skills --codex         # Codex only
+npx alphafold3-skills --all           # all paths, force install
 ```
 
 ### Manual

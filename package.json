@@ -1,5 +1,5 @@
 {
-  "name": "alphafold3-tools",
+  "name": "alphafold3-skills",
   "version": "1.0.0",
   "description": "AlphaFold3 agent skills for opencode, Claude Code, and Codex — input JSON building + structure prediction pipeline",
   "license": "MIT",

@@ -18,11 +18,11 @@
 
 ---
 
-Agent skills for working with **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)** — Google DeepMind's biomolecular structure prediction pipeline — from building input JSON files to running and interpreting results.
+Agent skills for working with **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)** — **Google DeepMind**'s **biomolecular structure prediction** pipeline — from **building input JSON files** to **running and interpreting results**.
 
-Built on top of the [af3cli](https://github.com/SLx64/af3cli) library for input generation and the official [AlphaFold 3](https://github.com/google-deepmind/alphafold3) inference pipeline.
+Built on top of the **[af3cli](https://github.com/SLx64/af3cli)** library for **input generation** and the official **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)** inference pipeline.
 
-Compatible with all tools supporting the [Agent Skills](https://agentskills.io) standard: opencode, Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Windsurf, and 50+ others.
+Compatible with all tools supporting the **[Agent Skills](https://agentskills.io)** standard: **opencode**, **Claude Code**, **Codex**, **Cursor**, **Gemini CLI**, **GitHub Copilot**, **Windsurf**, and **50+** others.
 
 ---
 

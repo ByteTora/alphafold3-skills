@@ -18,11 +18,11 @@
 
 ---
 
-用于 **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)**（Google DeepMind 的生物分子结构预测管线）的 Agent Skills，覆盖从构建输入 JSON 到运行推理和解读结果的完整流程。
+用于 **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)**（**Google DeepMind** 的**生物分子结构预测**管线）的 Agent Skills，覆盖从**构建输入 JSON** 到**运行推理和解读结果**的完整流程。
 
-基于 [af3cli](https://github.com/SLx64/af3cli) 库生成输入文件，依托官方 [AlphaFold 3](https://github.com/google-deepmind/alphafold3) 推理管线。
+基于 **[af3cli](https://github.com/SLx64/af3cli)** 库**生成输入文件**，依托官方 **[AlphaFold 3](https://github.com/google-deepmind/alphafold3)** 推理管线。
 
-兼容所有支持 [Agent Skills](https://agentskills.io) 标准的工具：opencode、Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、Windsurf 等 50+ 工具。
+兼容所有支持 **[Agent Skills](https://agentskills.io)** 标准的工具：**opencode**、**Claude Code**、**Codex**、**Cursor**、**Gemini CLI**、**GitHub Copilot**、**Windsurf** 等 **50+** 工具。
 
 ---
 

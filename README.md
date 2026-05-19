@@ -24,6 +24,8 @@ Built on top of the **[af3cli](https://github.com/SLx64/af3cli)** library for **
 
 Compatible with all tools supporting the **[Agent Skills](https://agentskills.io)** standard: **opencode**, **Claude Code**, **Codex**, **Cursor**, **Gemini CLI**, **GitHub Copilot**, **Windsurf**, and **50+** others.
 
+> 💡 Also useful as a **learning reference** for understanding AlphaFold 3 — from model architecture and data pipeline internals to confidence metrics and troubleshooting — even without an AI agent.
+
 ---
 
 ## Skills

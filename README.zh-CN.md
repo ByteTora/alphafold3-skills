@@ -24,6 +24,8 @@
 
 兼容所有支持 **[Agent Skills](https://agentskills.io)** 标准的工具：**opencode**、**Claude Code**、**Codex**、**Cursor**、**Gemini CLI**、**GitHub Copilot**、**Windsurf** 等 **50+** 工具。
 
+> 💡 也可作为 **AlphaFold 3 的学习参考资料**——从模型架构、数据管线内部机制，到置信度指标解读和故障排查，即使不使用 AI Agent 也能阅读学习。
+
 ---
 
 ## Skills 概览
